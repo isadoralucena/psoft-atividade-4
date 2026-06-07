@@ -50,7 +50,7 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public List<UsuarioResponseDTO> listar() {
-        List<Usuario> usuarios = usuarioRepository.findAll();
+        List<Usuario> usuarios = usuarioRepository.findAllByOrderByNomeAsc();
         return usuarios.stream()
                 .map(UsuarioResponseDTO::new)
                 .collect(Collectors.toList());
