@@ -27,6 +27,22 @@ public class UsuarioController {
                 .body(usuarioService.recuperar(id));
     }
 
+    @GetMapping(value = "", params = "nome")
+    public ResponseEntity<?> recuperarUsuariosPeloNome(
+            @RequestParam String nome) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usuarioService.recuperarUsuariosPeloNome(nome));
+    }
+
+    @GetMapping(value = "", params = "endereco")
+    public ResponseEntity<?> recuperarUsuariosPeloEndereco(
+            @RequestParam String endereco) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usuarioService.recuperarUsuariosPeloEndereco(endereco));
+    }
+
     @GetMapping("")
     public ResponseEntity<?> listarUsuarios() {
 

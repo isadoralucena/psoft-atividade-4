@@ -13,6 +13,10 @@ public interface UsuarioService {
 
     UsuarioResponseDTO recuperar(Long id);
 
+    List<UsuarioResponseDTO> recuperarUsuariosPeloNome(String nome);
+
+    List<UsuarioResponseDTO> recuperarUsuariosPeloEndereco(String endereco);
+
     UsuarioResponseDTO criar(UsuarioPostPutRequestDTO usuarioPostPutRequestDTO);
 
     void remover(Long id, String codigoAcesso);
